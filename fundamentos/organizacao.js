@@ -6,3 +6,7 @@ console.log("Hello World my champs!");
         console.log("Estou dentro de um bloco.");
     }
 }
+
+/*
+    Esse tipo de comentário também funciona.
+*/
