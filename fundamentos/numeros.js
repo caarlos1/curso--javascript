@@ -4,6 +4,7 @@ const peso2 = 1.5;
 
 // Que também podem ser definidos passando uma string com o construtor Number();
 const peso3 = Number("2.0"); 
+console.log(typeof Number); // Number é uma função.
 
 // Mas tente criar assim, não funcionará. 
 let numeroString = "3.0"; // Isso é uma string com um número dentro.
