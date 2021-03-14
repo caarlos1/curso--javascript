@@ -5,7 +5,7 @@ var numero = 1; // Global.
     console.log('dentro =', numero);
 }
 
-console.log('dentro =', numero);
+console.log('fora =', numero);
 
 /*
     O let tem 3 escopos: Global, bloco e de função.
