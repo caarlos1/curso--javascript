@@ -1,0 +1,1 @@
+this.ola = 'Fala ain meu parceiru!'
