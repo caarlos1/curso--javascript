@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Axios #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/axios.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Estados</h1>
+
+    <script>
+        const url = 'dados/estados.json'
+
+        const tratarEstados = (res) => {
+            const itens = res.data.reduce( (string, estado) => string + `<li>${estado.nome}</li>`, '' )
+            document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+        }
+
+        // Axios ja converte a resposta.
+        axios(url).then( tratarEstados )
+    </script>
+</body>
