@@ -1,7 +1,6 @@
-// O gulp é baseado em funções (tarefas) que será executadas.
+// O gulp é baseado em funções (tarefas) que serão executadas.
 const gulp = require('gulp')
 const { series, parallel } = require('gulp')
-
 
 const antes1 = cb => {
     console.log('Tarefa Antes: 1');
@@ -13,12 +12,9 @@ const antes2 = cb => {
     return cb()
 }
 
-// As tarefas precisam de um callback padrão no final.
-function copiar( cb ){
-    // gulp.src([ 'pastaA/arquivo1.txt', 'pastaA/arquivo2.txt' ]) // Conjunto de arquivos.
-    gulp.src('pastaA/**/*.txt') // Vai copiar todos os arquivos .txt de todas as pastas 
-        // .pipe Faz transformação nos arquivos.
-        .pipe( gulp.dest('pastaB') ) // .dest copia arquivos para destino.
+const copiar = cb => {
+    gulp.src('pastaA/**/*.txt') // copia
+        .pipe( gulp.dest('pastaB') ) // move
     return cb()
 }
 
@@ -29,7 +25,7 @@ const fim = cb => {
 
 // Exportando tarefa default em series.
 module.exports.default = series(
-    parallel(antes1, antes2), // Executando em paralelo.
+    parallel( antes1, antes2 ),
     copiar,
     fim,
 )
