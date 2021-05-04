@@ -4,7 +4,7 @@ const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
 
-const concatJS = (cb) => {
+const transformacaoJS = (cb) => {
     return gulp.src('src/**/*.js')
         .pipe( babel({
             comments: false,
@@ -21,6 +21,6 @@ const fim = (cb) => {
 }
 
 module.exports.default = series(
-    concatJS,
+    transformacaoJS,
     // fim
 )
